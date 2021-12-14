@@ -1,0 +1,17 @@
+.wrapepr-mng{
+    display: flex;
+    min-height: 500px;
+    position: relative;
+}
+.wrapper-left-mng{
+    width : 20%;
+    background: blueviolet;
+}
+.wrapper-right-mng{
+    width: 100%;
+}
+.modal{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

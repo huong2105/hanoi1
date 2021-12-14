@@ -1,0 +1,98 @@
+.imgblog{
+
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.wrapperBlog {
+
+    display: flex;
+    gap: 20px;
+    padding: 0 135px;
+    padding-top: 50px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.wrapperimg  {
+    margin-bottom: 26px;
+}
+
+.titleBlog{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+    color: #2d2d2d;
+    margin-bottom: 15px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.comment {
+
+    display: flex;
+    justify-content: center;
+    gap: 17.5px;
+    margin-bottom: 15px;
+}
+
+.comment div {
+    font-size: 16px;
+    font-weight: 400;
+    color: #a7a7a7;
+}
+
+.summary {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #5c5c5c;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.infocomment{
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.itemblog{
+
+    display: flex !important;
+    flex-direction: column-reverse !important;
+}
+
+.summary1{
+
+    font-size: 16px;
+    margin-bottom: 26px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.contentblog{
+
+    width: 30%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.wrapper-content-blog {
+
+    padding: 0 25px;
+}

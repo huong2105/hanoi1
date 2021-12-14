@@ -1,0 +1,18 @@
+.breadcrumb{
+    display: flex;
+    gap : 5px;
+    margin-bottom:60px !important;
+   
+}
+
+.breadcrumbblog{
+    margin-bottom: unset !important;
+    padding: 0 100px !important;
+}
+.breadcrumb div{
+
+    font-size: 14px;
+    font-weight: 400;
+    color: #999999;
+    margin-bottom: -2rem;
+}

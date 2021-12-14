@@ -1,0 +1,98 @@
+.SingUp {
+    display: flex;
+    padding: 50px 0px;
+    margin: 0 250px;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 10;
+    position: relative;
+}
+
+.left {
+    width: 40%;
+    height: 100%;
+    background: #ffffff;
+}
+
+.right {
+    width: 60%;
+}
+.item-left {
+    padding: 50px 50.5px 50px 50.5px;
+
+}
+.item-left h2 {
+    font-weight: 600;
+    font-size: 36px;
+    color: #2d2d2d;
+    text-transform: capitalize;
+}
+.item-left p {
+    font-weight: normal;
+    font-size: 18px;
+    color: #5c5c5c;
+}
+.name {
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+
+.wrapper-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.name::placeholder {
+    font-weight: normal;
+    font-size: 16px;
+    padding-left: 16px;
+}
+
+.messenger {
+    height: 120px;
+}
+
+.wrapper-input button {
+    width: 180px;
+    height: 50px;
+    background: #2aa0f5;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    transition: 1s;
+    margin-bottom: 20px;
+}
+
+.wrapper-input button:hover {
+    transition: 1s;
+    background: blue;
+}
+.right img {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper-img {
+
+    position: relative;
+    background: #e0e0e0;
+}
+
+/* @media(max-width: ...) - mình sẽ thay đổi kích thước nếu màn hình đang ở kích thước khác
+vd như màn hình của điện thoại...
+Trang đang ký là c lấy code 
+*/
+@media (max-width: 1367px){
+
+    .SingUp{
+
+        margin: 0 160px;
+    }
+}
+
+

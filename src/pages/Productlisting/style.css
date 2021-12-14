@@ -1,0 +1,8 @@
+.productlisting{
+    padding: 0px 135px;
+}
+.Wapper-product{
+    display: flex;
+    gap: 30px;
+    padding-top: 100px;
+}

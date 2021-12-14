@@ -1,0 +1,109 @@
+.wrapper-news-detail{
+    text-align: left;
+}
+.news-detail-top{
+    display: flex;
+    padding: 0 135px;
+    gap:30px;
+}
+.news-detail-top-left{
+width: 50%;
+background: coral;
+}
+.news-detail-top-right{
+width: 50%;
+background: crimson;
+}
+
+.img-top-left{
+    height: 570px;
+    background: burlywood;
+    margin-bottom: 15px;
+}
+.img-bottom-left {
+    display: flex;
+    gap:15px;
+    justify-content: space-between;
+}
+.img1{
+    width:25%;
+    height: 131px;
+    background: cadetblue;
+}
+.title{
+    font-weight: 600;
+    font-size: 40px;
+    color: #2D2D2D;
+    text-align: left;
+}
+.content{
+    font-weight: 400;
+    font-size: 18px;
+    color: #5C5C5C;
+    text-align: left;
+
+}
+
+.wrappernoidung {
+
+    position: relative;
+    background-color: #f8f8f8;
+    margin-bottom: 110px;
+}
+
+.noidung{
+    margin : 0 135px;
+    background-color: #ffffff;
+
+}
+
+.wrapeprtintucchitiet{
+
+    background-color: #f8f8f8;
+}
+
+.NameDetail{
+    font-weight: 600;
+    font-size: 32px;
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: 12px;
+}
+.wrappernoidungchitietbaiviet{
+
+    margin: 0 70px;
+}
+.thongtinchitietbaiviet {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 1px solid #e5e5ee;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    
+}
+.thongtinchitietbaiviet div{
+    font-weight: 400;
+    font-size: 14px;
+    color:#999999;
+    
+}
+
+.luotbinhluan{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.wp-block-image{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wp-block-image img{
+
+    object-fit: cover;
+}

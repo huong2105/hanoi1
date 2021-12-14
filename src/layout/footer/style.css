@@ -1,0 +1,43 @@
+.wrapper-footer{
+
+    background: #E0C097;
+    padding: 80px 135px 10px 135px;
+    display: flex;
+    gap: 50px;
+}
+
+.footer {
+    width: 100%;
+}
+
+.footer-left img {
+    width: 150px;
+    height: 150px;
+}
+
+.footer-left div{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.footer-left p{
+   font-size: 20px;
+   color: #ffffff;
+   font-family: revert;
+
+}
+
+.footer-right span {
+
+    font-size: 24px;
+    color: #ffffff;
+    font-family: revert;
+}
+.footer-right p {
+
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: revert;
+}

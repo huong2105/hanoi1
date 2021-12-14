@@ -1,0 +1,29 @@
+.infosignup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+}
+
+.infosignup div{
+      margin-bottom: 20px;
+}
+
+.infosignup input {
+      border-radius: 5px;
+      width: 400px;
+      height: 35px;
+      border: 1px solid #e5e5e5;
+}
+
+.infosignup button {
+      width : 200px;
+      height: 50px;
+      border: none;
+      border-radius: 5px;
+      background: #2aa0f5;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: 700;
+}
+

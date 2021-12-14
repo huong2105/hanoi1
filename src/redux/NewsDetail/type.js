@@ -1,0 +1,3 @@
+export const NEW_DETAIL = "NEW_DETAIL"
+export const NEW_DETAIL_SUCCESS = "NEW_DETAIL_SUCCESS"
+export const NEW_DETAIL_FAIL = "NEW_DETAIL_FAIL"
