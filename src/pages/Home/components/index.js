@@ -7,7 +7,9 @@ import { Carousel } from "react-bootstrap"
 import { filterListProduct, getListProduct, wpGetListProduct } from '../../../redux/ListProduct/action';
 import { Link } from 'react-router-dom';
 
+
 function Home() {
+ 
   const [id, setId] = useState("615db69b5c661f01f4db4000")
   const { data } = useSelector(state => state.dulieubanner)
 
@@ -19,7 +21,7 @@ function Home() {
     dispatch(getListProduct())
     dispatch(filterListProduct(id))
     dispatch(wpGetListProduct())
-  }, [])
+  }, [dispatch])
 
   const filterListProductSubmit = (id) => {
 
