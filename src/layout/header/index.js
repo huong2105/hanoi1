@@ -33,13 +33,17 @@ function Header() {
 
         setInput(1)
     }
+    const onSetIdHeader = (id) => {
+
+        console.log("id", id);
+    }
     return (
         <div className="App1">
             <div className="header-top">
                 <div className="content-left">
-                    <a href="tel:0000xxxxx"> <AiOutlinePhone />0000xxxxx</a>
+                    <a href="tel:0000xxxxx"> <AiOutlinePhone />123 456 789</a>
                     <div>|</div>
-                    <a href="mailto: abc@gmail.com"> <CgMail /> abc@gmail.com </a>
+                    <a href="mailto: abc@gmail.com"> <CgMail /> coffeeandcamp@gmail.com </a>
 
                 </div>
                 <a href='/dang-nhap'>
@@ -47,11 +51,13 @@ function Header() {
                 </a>
             </div>
             <div className='infoheader'>
-                <div></div>
+                <div>
+                    <img src="/images/6510627715_bf1acfa0-6a57-427b-867d-856bcff3cd68.png" className='logo-header' />
+                </div>
                 {header.map((item, index) =>
                     <>
-                        <a href={`${item.link}`}>
-                            <span onClick={() => setIdHeader(item.id)} className={item.id === idHeader ? "a" : ""}>{item.title}
+                        <a href={`${item.link}`} key = {index}>
+                            <span onClick={() => onSetIdHeader(item.id)} className={item.id === idHeader ? "a" : ""}>{item.title}
                             </span>
                         </a>
 

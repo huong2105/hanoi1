@@ -1,38 +1,21 @@
 
 import './style.css';
-
+import {BsTelephone} from "react-icons/bs"
+import {FiMail} from "react-icons/fi"
+import {GoLocation} from "react-icons/go"
 function Footer() {
   return (
     <div className="App">
       <div className="wrapper-footer">
         <div className="footer-left footer">
           <div>
-            <img src="/images/cafe-removebg-preview.png" />
-            <img src="/images/pngtree-homestay-icon-image_2223544-removebg-preview.png" />
+            <img src="/images/6510627715_bf1acfa0-6a57-427b-867d-856bcff3cd68.png" />
           </div>
-          <p>
-            Đây là blog du lịch chuyên review những trải nghiệm du lịch đúng nhất dành cho các bạn trẻ có đam mê đi đó đây,
-            đi phượt, tự túc hoặc đi theo tour du lịch. Hãy ủng hộ blog của Mèo nhé!
-          </p>
         </div>
-        <div className="footer-center footer">
-        </div>
-        <div className="footer-right footer">
-          <span>Từ khóa được tìm kiếm nhiều:</span>
-          <br></br>
-          <br></br>
-          <p>
-            Quán cafe đẹp
-            <br></br>
-            <br></br>
-            Homestay đẹp
-            <br></br>
-            <br></br>
-            Kinh nghiệm du lịch
-            <br></br>
-            <br></br>
-            Địa điểm ăn uống
-          </p>
+        <div className="footer-right">
+        <p><BsTelephone /> +012 345 6789</p>
+        <p><FiMail/> coffeeandcamp@gmail.com</p>
+        <p><GoLocation /> 1234 Main Street, City, Country</p>
         </div>
       </div>
     </div >

@@ -11,13 +11,12 @@ function ManaComponent() {
     const [show, setShow] = useState(false);
     const [Title, setTitle] = useState("")
     const [img, setImg] = useState("")
-    const { data, loading } = useSelector(state => state.dulieubanner)
-    console.log("loading", loading);
+    const { data } = useSelector(state => state.dulieubanner)
     const dispatch = useDispatch()
     useEffect(() => {
 
         dispatch(laybanner())
-    }, []);
+    }, [dispatch]);
 
     const onSubmit = () => {
         const postBanner = { tieude: Title, anh: img[0].name }
@@ -43,11 +42,11 @@ function ManaComponent() {
                         </tr>
                     </thead>
                     <tbody>
-                        {loading === false ? data?.map((item, index) => (
+                        {data && data.length > 0 ? data?.map((item, index) => (
                             <tr key={index}>
                                 <th scope="row">{index + 1}</th>
                                 <td>{item.tieude ?? "Khong co data"}</td>
-                                <td><img src={`/images/${item.anh}`} /></td>
+                                <td><img src={`/images/${item.anh}`} className='imagesbanner'/></td>
                                 <td>{item.createdAt}</td>
                                 <td>{item.updatedAt}</td>
                                 <td>

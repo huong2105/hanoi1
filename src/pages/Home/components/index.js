@@ -9,13 +9,15 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   const [id, setId] = useState("615db69b5c661f01f4db4000")
-  const { data } = useSelector(state => state.dulieubanner)
 
   const { dataListProduct, datafilterListProduct, wpdata } = useSelector(state => state.ListReducer)
-  console.log("wpdata", wpdata);
+  const { data } = useSelector(state => state.dulieubanner)
   const dispatch = useDispatch()
   useEffect(() => {
+
     dispatch(laybanner())
+  }, []);
+  useEffect(() => {
     dispatch(getListProduct())
     dispatch(filterListProduct(id))
     dispatch(wpGetListProduct())
@@ -31,20 +33,17 @@ function Home() {
 
       <div className="wrapper-banner">
 
-        <Carousel>
-          {data.map((item, index) => (
-            <Carousel.Item>
+        <Carousel data data-interval="1000" autoPlay={true}
+          interval={5000}>
+          {data && data.length > 0 ? data.map((item, index) => (
+            <Carousel.Item key={index} >
               <img
-                className="d-block w-100"
+                className="d-block w-100 imgbanner"
                 src={`/images/${item.anh}`}
                 alt="First slide"
               />
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </Carousel.Caption>
             </Carousel.Item>
-          ))}
+          )) : 1}
 
         </Carousel></div>
 
@@ -69,7 +68,7 @@ function Home() {
                 </div>
               </Link>) : (null)}
 
-
+              <div className="content-product-top-left-1" style={{ backgroundImage: `url('/images/${datafilterListProduct.anhsanpham1}')` }}>content-product-top-right-2</div>
               <div className="content-product-top-left-2" style={{ backgroundImage: `url('/images/${datafilterListProduct.anhsanpham2}')` }}>content-product-top-left-2</div>
             </div>
             <div className="content-product-top-right">
@@ -81,12 +80,11 @@ function Home() {
             {dataListProduct.map((item, index) => (
               <div className="item-content-product-bottom"
                 key={index}
-                onClick={() => filterListProductSubmit(item._id)}>{item.tieude} </div>
+                onClick={() => filterListProductSubmit(item._id)}>{item.tieude}
+              </div>
             ))}
 
-            <div className="item-content-product-bottom">pool side</div>
-            <div className="item-content-product-bottom">custom</div>
-            <div className="item-content-product-bottom">packages</div>
+
             <div className="view">view</div>
           </div>
         </div>

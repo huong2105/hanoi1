@@ -47,9 +47,10 @@
   }
 
   .infoheader {
-    padding: 20px 136px;
+    padding: 15px 136px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
   }
 
@@ -57,6 +58,13 @@
     display: flex;
     gap: 15px;
   }
+  .logo-header{
+
+    width: 115px;
+  }
+  /* .infoheader img {
+    height: 45%;
+  } */
 
   .iconheader svg {
 
