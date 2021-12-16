@@ -30,11 +30,6 @@
     text-decoration: none !important;
   }
 
-  .content-left{
-
-    
-  }
-
   .content-left a{
 
     color: #2d2d2d;
@@ -87,7 +82,18 @@
   .content-right{
 
     color: #FFFFFF;
-    gap: 10px
+    gap: 10px;
+   
+  }
+
+  .account-user{
+    overflow: hidden;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
   }
 
   .a {

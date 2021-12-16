@@ -5,7 +5,7 @@ function BreadcrumbComponent({title}) {
     
     return (
      <div className = 'breadcrumb'  style={{padding: "0 135px"}}>
-         <div>Trang chủ</div>
+         <a href='/'><div>Trang chủ</div></a>
          <div>|</div>
          <div>{title}</div>
      </div>

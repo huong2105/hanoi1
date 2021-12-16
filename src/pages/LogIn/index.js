@@ -1,4 +1,5 @@
 import React from 'react';
+import BreadcrumbComponent from '../../components/Breadcrumb';
 import Breadcrumb from './Components/breadcrumb'
 import Infologin from './Components/Infologin';
 
@@ -6,7 +7,7 @@ import Infologin from './Components/Infologin';
 const PageLogIn = () => {
       return (
             <div>
-                  <Breadcrumb />
+                  <BreadcrumbComponent title = "Đăng nhập"  />
                   <Infologin/>
             </div>
       );

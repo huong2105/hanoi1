@@ -26,3 +26,22 @@
       text-transform: uppercase;
       font-weight: 700;
 }
+
+.err-login {
+      font-size: 14px;
+      color: red;
+}
+
+.iteminfologin {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+}
+
+.buttonlogin {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}

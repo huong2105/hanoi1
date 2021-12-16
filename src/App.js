@@ -15,8 +15,8 @@ import PageProducListing from './pages/Productlisting';
 import Pagesignup from './pages/SignUp';
 import PageLogIn from './pages/LogIn';
 import { PageBlog } from './pages/Blog';
-
 function App() {
+ 
   return (
     <div style = {{paddingTop : "92px"}}>
       <Router>
