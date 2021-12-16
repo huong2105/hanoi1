@@ -55,7 +55,6 @@ function Right({titleCategory}) {
     ]);
     const dispatch = useDispatch()
     const { dataListProduct } = useSelector(state => state.ListReducer)
-    console.log("dataListProduct",dataListProduct);
     useEffect(() => {
         
         dispatch(getListProduct())

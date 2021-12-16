@@ -11,12 +11,14 @@ import { AiOutlineComment } from "react-icons/ai"
 
 function PageNewsDtail() {
 
-    const { slug } = useParams()
+    const { slug } = useParams();
+    console.log("sluggg", slug);
     const { data } = useSelector(state => state.newsDetailReducer)
+    console.log("dataaaâ", data);
     const disptach = useDispatch()
     useEffect(() => {
         disptach(getNewsDetail(slug))
-    }, [])
+    }, [slug])
     return (
         <div className='wrapeprtintucchitiet'> 
             <Banner data={data} />
