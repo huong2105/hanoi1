@@ -1,26 +1,52 @@
+import axios from "axios";
 import React from "react";
+import { useState } from "react";
 import "./style.css";
 
 function PageSingup() {
+  const [userName, setUserName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [company, setCompany] = useState("")
+  const [position, setPosition] = useState("")
+  const [content, setContent] = useState("")
+
+  const postFeedback = async () => {
+    if(userName === "" || email === "" || phone === "" || position === "" || content === ""){
+      alert("Vui lòng nhập đẩy đầy đủ thông tin !!!")
+    }else{
+      const data = { userName, email, phone, company, position, content };
+      await axios.post(`http://localhost:5000/feedback`, data);
+      setUserName("")
+      setEmail("")
+      setPhone("")
+      setCompany("")
+      setPosition("")
+      setContent("")
+
+    }
+   
+  }
   return (
     <div className="wrapper-img">
       <div className="SingUp">
         <div className="left">
           <div className="item-left">
             <h2>Gửi phản hồi</h2>
-            <p> Commercial enquiries only </p>
             <div className="wrapper-input">
-              <input type="text" className="name" placeholder="Your Name *" />
-              <input type="text" className="name" placeholder="Company *" />
-              <input type="text" className="name" placeholder="Email *" />
-              <input type="number" className="name" placeholder="Phone *" />
-              <input type="text" className="name" placeholder="State *" />
+              <input type="text" value={userName} className="name" placeholder="Họ và tên *" onChange={(e) => setUserName(e.target.value)} />
+              <input type="text" value={email} className="name" placeholder="Email *" onChange={(e) => setEmail(e.target.value)} />
+              <input type="number" value={phone} className="name" placeholder="Số điện thoại *" onChange={(e) => setPhone(e.target.value)} />
+              <input type="text" value={company} className="name" placeholder="Công ty (websites) nếu có" onChange={(e) => setCompany(e.target.value)} />
+              <input type="text" value={position} className="name" placeholder="Chức vụ/nghề nghiệp *" onChange={(e) => setPosition(e.target.value)} />
               <input
                 type="text"
+                value={content}
                 className="name messenger"
-                placeholder="Messenger"
+                placeholder="Nội dung phản hồi... *"
+                onChange={(e) => setContent(e.target.value)}
               />
-              <button>Gửi</button>
+              <button type="submit" onClick={() => postFeedback()}>Gửi</button>
             </div>
           </div>
         </div>

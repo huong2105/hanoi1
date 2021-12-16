@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 function Home() {
- 
+
   const [id, setId] = useState("615db69b5c661f01f4db4000")
 
   const { dataListProduct, datafilterListProduct, wpdata } = useSelector(state => state.ListReducer)
@@ -18,7 +18,7 @@ function Home() {
   useEffect(() => {
 
     dispatch(laybanner())
-  }, []);
+  }, [dispatch]);
   useEffect(() => {
     dispatch(getListProduct())
     dispatch(filterListProduct(id))
@@ -38,14 +38,25 @@ function Home() {
         <Carousel data data-interval="1000" autoPlay={true}
           interval={5000}>
           {data && data.length > 0 ? data.map((item, index) => (
-            <Carousel.Item key={index} >
+            item.anh && item.anh !== null && item.anh !== undefined ? (<Carousel.Item key={index} >
               <img
                 className="d-block w-100 imgbanner"
                 src={`/images/${item.anh}`}
-                alt="First slide"
+                alt=""
               />
-            </Carousel.Item>
-          )) : 1}
+            </Carousel.Item>) : (<Carousel.Item key={index} >
+              <img
+                className="d-block w-100 imgbanner"
+                src={`/images/5.png`}
+                alt=""
+              />
+            </Carousel.Item>)
+
+          )) : <Carousel.Item><img
+            className="d-block w-100 imgbanner"
+            src={`/images/5.png`}
+            alt=""
+          /></Carousel.Item>}
 
         </Carousel></div>
 

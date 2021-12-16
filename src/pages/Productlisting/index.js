@@ -4,14 +4,20 @@ import Left from './Components/product/Component/Left';
 import "./style.css"
 function PageProducListing() {
 
-    
+
     return (
-     <div className ="productlisting">
-         <Breadcrumb />
-         <div className = "Wapper-product">
-            <Left />
-         </div>
-     </div>
+        <>
+            <div class="BannerBlog">
+                <img src="/images/CAFE.png" />
+            </div>
+            <div className="productlisting">
+                <Breadcrumb />
+                <div className="Wapper-product">
+                    <Left />
+                </div>
+            </div>
+        </>
+
     );
 }
 

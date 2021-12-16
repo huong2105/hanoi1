@@ -136,7 +136,7 @@ function Right({titleCategory}) {
                           <div className="info-left">
                               <div>{index + 1}</div>
                           </div>
-                          {/* {item.acf && item.acf !== undefined && item.acf !== null ? <div className="img-news img-new-2"><img src={`${item.acf.img1.url}`} /></div> : 0} */}
+                          {item.acf && item.acf !== undefined && item.acf !== null ? <div className="img-news img-new-2"><img src={`${item.acf.img1.url}`} /></div> : 0}
                           <div className='content-address'>
                               <h2>{ReactHtmlParser(item.title.rendered)}</h2>
                               <div>

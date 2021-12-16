@@ -7,7 +7,6 @@ function* laydulieuBanner() {
     try {
 
         const res = yield axios.get("http://localhost:5000/banner")
-        console.log("lấy dữ liệu banner", res);
         if (res) {
 
             yield put(actions.layBannerThanhCong(res.data))

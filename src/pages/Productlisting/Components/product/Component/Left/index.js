@@ -74,13 +74,19 @@ function Left() {
         setlistdata(res.data)
 
     }, [])
+
+    const onsetTitleCategory = () => {
+
+        setTitleCategory("all")
+        setId(null)
+    }
     return (
         <>
             <div className='product-left'>
                 <div className='categori'>
                     <p>Categories</p>
                     <div>
-                        <div className='title' onClick={() => setTitleCategory("all")}>Tất cả</div>
+                        <div    style={{ color: titleCategory === "all" ? "#2AA0F5" : "" }} className='title' onClick={() => onsetTitleCategory("all")}>Tất cả</div>
                         {listdata?.map((item, index) => (
                             <div className='title'
                                 key = {index}

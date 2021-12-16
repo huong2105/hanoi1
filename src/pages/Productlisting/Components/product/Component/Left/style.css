@@ -15,9 +15,10 @@
 }
 
 .title {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     color: #5c5c5c;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 

@@ -1,6 +1,5 @@
 .SingUp {
     display: flex;
-    padding: 50px 0px;
     margin: 0 250px;
     border: 1px solid #e2e2e2;
     border-radius: 10px;
@@ -27,6 +26,7 @@
     font-size: 36px;
     color: #2d2d2d;
     text-transform: capitalize;
+    margin-bottom: 15px;
 }
 .item-left p {
     font-weight: normal;
@@ -80,7 +80,7 @@
 .wrapper-img {
 
     position: relative;
-    background: #e0e0e0;
+    background: #f8f8f8;
 }
 
 /* @media(max-width: ...) - mình sẽ thay đổi kích thước nếu màn hình đang ở kích thước khác

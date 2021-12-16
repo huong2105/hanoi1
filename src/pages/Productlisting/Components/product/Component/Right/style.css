@@ -35,7 +35,7 @@ a {
 }
 
 .img-news {
-      width: 45%;
+      width: 40%;
       height: 250px;
       margin-right: 35px;
 }
@@ -61,6 +61,7 @@ a {
 .info-address {
       display: flex;
       margin-bottom: 60px;
+      background-color: #ffffff;
 }
 
 .img-news img {
@@ -68,7 +69,7 @@ a {
       height: 100%;
 }
 .content-address h2{
-      font-size: 33px;
+      font-size: 25px;
       color: #2d2d2d;
 }
 
@@ -118,5 +119,5 @@ a {
 .img-new-2{
       margin-right: unset;
       margin-left: 25px;
-      width: 100%;
+      width: 40%;
 }

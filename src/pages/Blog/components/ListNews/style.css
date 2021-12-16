@@ -10,7 +10,6 @@
     display: flex;
     gap: 20px;
     padding: 0 135px;
-    padding-top: 50px;
     flex-wrap: wrap;
     justify-content: space-between;
 }

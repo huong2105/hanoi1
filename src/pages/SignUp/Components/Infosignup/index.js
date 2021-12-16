@@ -12,13 +12,15 @@ const Infosignup = () => {
   const [err, setError] = useState("");
   const history = useHistory("");
   const onSubmit = async () => {
-    console.log("userName", userName);
     if (
       userName === "" ||
       email === "" ||
       passwork === "" ||
       (confirmPasswork === "" && err !== "")
     ) {
+      if(passwork !== confirmPasswork){
+        setError("Mật khẩu không trùng khớp!");
+      }
       setError("Vui lòng nhập đầy đủ thông tin!");
     } else {
       const data = { userName, email, passwork, confirmPasswork };
@@ -27,7 +29,7 @@ const Infosignup = () => {
       if (res.status === 250) {
         setError("Tài khoản đã tồn tại!!");
       } else if (res.status === 200) {
-        // history.push("/dang-nhap");
+        history.push("/dang-nhap");
       }
     }
   };

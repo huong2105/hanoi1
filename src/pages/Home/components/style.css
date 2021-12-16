@@ -215,6 +215,11 @@
     height: 100%;
   }
 
+  .sr-only{
+
+    display: none !important;
+  }
+
   @keyframes App-logo-spin {
     from {
       transform: rotate(0deg);

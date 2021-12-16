@@ -18,7 +18,7 @@ import { PageBlog } from './pages/Blog';
 function App() {
  
   return (
-    <div style = {{paddingTop : "92px"}}>
+    <div style = {{paddingTop : "100px"}}>
       <Router>
         <Switch>
           <Route path = '/blog/:slug' component = {PageBlog} />
