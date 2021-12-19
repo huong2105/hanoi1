@@ -6,22 +6,27 @@ import { useHistory } from "react-router-dom";
 
 const Infologin = () => {
   const [email, setEmail] = useState();
+  const [status, setStatus] = useState("client")
   const [passwork, setPasswork] = useState();
   const [token, setToken] = useCookies();
   const [err, setErr] = useState("");
   const history = useHistory()
   const onSubmitLogin = async () => {
     try {
-      const data = { email, passwork };
+      const data = { email, passwork, status };
       const res = await axios.post(`http://localhost:5000/login`, data);
+      const getRest = await axios.get(`http://localhost:5000/account/category=${email}`);
+      console.log("getRest", getRest);
       console.log(res);
       if (res.data.token) {
         const tokenData = res.data.token;
         const email = res.data.email;
         const userName = res.data.userName;
+        const status = getRest.data.status;
         setToken("token", tokenData);
         setToken("email", email);
         setToken("userName", userName);
+        setToken("status", status);
         history.push('/')
       }
     } catch (error) {

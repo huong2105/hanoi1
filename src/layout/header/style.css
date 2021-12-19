@@ -1,13 +1,11 @@
 .wrapper-header {
-
   width: 100%;
   background: red;
   height: 100px;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .App1 {
-
   position: fixed;
   width: 100%;
   z-index: 12;
@@ -15,28 +13,24 @@
 }
 
 .header-top {
-
   width: 100%;
   background: pink;
   height: 25%;
   display: flex;
   justify-content: space-between;
-  border: 1px solid #E5E5E5;
-  background: #FFFFFF;
+  border: 1px solid #e5e5e5;
+  background: #ffffff;
 }
 
 a {
-
   text-decoration: none !important;
 }
 
 .content-left a {
-
   color: #2d2d2d;
 }
 
 .content-left svg {
-
   font-size: 24px;
   color: #2d2d2d;
 }
@@ -46,8 +40,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #E5E5E5;
-
+  border: 1px solid #e5e5e5;
 }
 
 .iconheader {
@@ -59,7 +52,6 @@ a {
 }
 
 .logo-header {
-
   width: 115px;
 }
 
@@ -68,14 +60,13 @@ a {
   } */
 
 .iconheader svg {
-
   font-size: 24px;
   color: #2d2d2d;
   cursor: pointer;
 }
 
 .iconheader input {
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
   border-radius: 3px;
 }
 
@@ -86,10 +77,10 @@ a {
 }
 
 .content-right {
-
-  color: #FFFFFF;
+  color: #ffffff;
   gap: 10px;
-
+  position: relative;
+  cursor: pointer;
 }
 
 .account-user {
@@ -103,6 +94,29 @@ a {
 }
 
 .a {
+  color: #2aa0f5 !important;
+}
 
-  color: #2AA0F5 !important;
+.itemmannager {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: none;
+}
+.itemmannager div {
+  background-color: #e5e5e5;
+}
+
+.itemmannager div:hover {
+  background: #2aa0f5;
+}
+.content-right:hover .itemmannager {
+  display: block;
+}
+
+.itemmannager:hover{
+
+  display: block;
 }

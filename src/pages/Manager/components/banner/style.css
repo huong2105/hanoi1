@@ -5,7 +5,22 @@
 }
 .wrapper-left-mng{
     width : 20%;
-    background: blueviolet;
+    background: #e5e5e5;
+
+}
+
+.wrapper-left-mng p{
+   
+    color: #000000;
+    cursor: pointer;
+    border-bottom: 1px solid #f8f8f8;
+    padding: 15px 15px;
+    font-weight: 500;
+}
+
+.wrapper-left-mng div p{
+   
+   margin-top: none;
 }
 .wrapper-right-mng{
     width: 100%;

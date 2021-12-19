@@ -13,6 +13,7 @@ function ManaComponent() {
     const [img, setImg] = useState("")
     const { data } = useSelector(state => state.dulieubanner)
     const dispatch = useDispatch()
+    console.log("Data", data);
     useEffect(() => {
 
         dispatch(laybanner())
@@ -46,7 +47,7 @@ function ManaComponent() {
                             <tr key={index}>
                                 <th scope="row">{index + 1}</th>
                                 <td>{item.tieude ?? "Khong co data"}</td>
-                                <td><img src={`/images/${item.anh}`} className='imagesbanner'/></td>
+                                <td><img src={`/images/${item.anh}`} className='imagesbanner' alt = ""/></td>
                                 <td>{item.createdAt}</td>
                                 <td>{item.updatedAt}</td>
                                 <td>
