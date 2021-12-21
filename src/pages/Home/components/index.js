@@ -6,14 +6,32 @@ import { laybanner } from '../../../redux/bannermng/action';
 import { Carousel } from "react-bootstrap"
 import { filterListProduct, getListProduct, wpGetListProduct } from '../../../redux/ListProduct/action';
 import { Link } from 'react-router-dom';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import ReactHtmlParser from "react-html-parser";
+import { BsArrowBarRight, BsArrowRight } from "react-icons/bs"
+import { getHomestay } from '../../../redux/Homestay/action';
+
 
 
 function Home() {
 
   const [id, setId] = useState("615db69b5c661f01f4db4000")
-
   const { dataListProduct, datafilterListProduct, wpdata } = useSelector(state => state.ListReducer)
   const { data } = useSelector(state => state.dulieubanner)
+  const { dataHomestay } = useSelector(state => state.homestayReducer)
+  console.log("homestayReducer", dataHomestay);
+  const settings = {
+    arrows: true,
+    dots: true,
+    infinite: true,
+    autoPlay: true,
+    autoplaySpeed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+  };
+  console.log("dataListProduct", dataListProduct);
   const dispatch = useDispatch()
   useEffect(() => {
 
@@ -23,6 +41,7 @@ function Home() {
     dispatch(getListProduct())
     dispatch(filterListProduct(id))
     dispatch(wpGetListProduct())
+    dispatch(getHomestay())
   }, [dispatch])
 
   const filterListProductSubmit = (id) => {
@@ -61,18 +80,13 @@ function Home() {
         </Carousel></div>
 
       <div className="wrapper-content">
-        <div className="content-function">
-          <div className="item-content-function">
-            <div className="text-content-function">Free <br></br> Shipping</div>
-            <div className="text-content-function">Finance <br></br> Available</div>
-            <div className="text-content-function">Warranty <br></br> Guarrantee</div>
-            <div className="text-content-function">Large Stoke <br></br> Holdings</div>
-            <div className="text-content-function">Product<br></br> Sourcing</div>
-            <div className="text-content-function">Installation</div>
-          </div >
-        </div >
         <div className="content-product">
           <div className="content-product-top">
+            {/* <div className='titleHomestay'>
+                    <div></div>
+                    <span>Top Homestay</span>
+                    <div></div>
+                  </div>      */}
             <div className="content-product-top-left">
               {wpdata && wpdata.length > 0 ? (<Link to={`/tin-tuc/${wpdata[0].slug}`}>
                 <div className="content-product-top-left-1" style={{ backgroundImage: `url('${wpdata && wpdata.length > 0 ? wpdata[0].acf.img1.url : (null)}')` }}>
@@ -90,29 +104,69 @@ function Home() {
             </div>
           </div>
           <div className="content-product-bottom">
-            {dataListProduct.map((item, index) => (
-              <div className="item-content-product-bottom"
-                key={index}
-                onClick={() => filterListProductSubmit(item._id)}>{item.tieude}
+            {dataHomestay && dataHomestay.length > 0 ?
+              dataHomestay.map((item, index) => (
+                <div className="item-content-product-bottom" key = {index}>
+                  <img src={`images/${item.anh}`} alt="" />
+                </div>
+              ))
+              : <> <div className="item-content-product-bottom">
+                <img src="images/1.png" alt="" />
               </div>
-            ))}
+                <div className="item-content-product-bottom">
+                  <img src="images/2.png" alt="" />
+                </div>
+                <div className="item-content-product-bottom">
+                  <img src="images/3.png" alt="" />
+                </div>
+                <div className="item-content-product-bottom">
+                  <img src="images/4.png" alt="" />
+                </div></>}
 
-
-            <div className="view">view</div>
+            <div className="view">
+              
+                <BsArrowBarRight fontSize={50} color={"#D1E8E4"} />
+            </div>
           </div>
         </div>
         <div className="new-product-ranges">
 
           <div className="item-new-product-ranges">
             <div className="item-new-product-top">
-              <div className="item-new-product-top-left">  New Product Ranges</div>
-              <div className="item-new-product-top-right"> QUá dài :)</div>
+              <div className="item-new-product-top-left"> Bài viết mới nhất </div>
+              <div className="item-new-product-top-right"> Bạn muốn tìm kiếm địa điểm mới nhất ? Tại Coffee And Camp, chúng mình liên tục bổ sung các địa điểm du lịch mới trong phạm vi Hà Nội.</div>
             </div>
             <div className="item-new-product-bottom">
-              <div className="item-new-product-bottom-1">bottom-1</div>
-              <div className="item-new-product-bottom-1">bottom-2</div>
-              <div className="item-new-product-bottom-1">bottom-3</div>
+              <Slider {...settings} className='sildernews'>
+                {dataListProduct && dataListProduct.length > 0 ? dataListProduct.map((item, index) => (
+                  <div>
+                    <Link to={`/chi-tiet/${item.slug}`}>
+                      <div className="item-new-product-bottom-1" key={index}>
+                        {item.acf && item.acf !== undefined && item.acf !== null && item.acf.img1 ? <img src={`${item.acf.img1.url}`} /> : 1}
+                        <div className='content-new-products-1'></div>
+                        <div className='title-address-news'>{ReactHtmlParser(item.title.rendered)}</div>
+                      </div></Link>
+                  </div>
+                )) : (null)}
+              </Slider>
             </div>
+            <a href="/danh-sach-dia-diem"> <div className='xtchomepage'>  Xem tất cả <BsArrowRight /> </div></a>
+            {/* <div>
+              <div className="item-new-product-bottom">
+                <Slider {...settings} className='sildernews'>
+                  {dataListProduct && dataListProduct.length > 0 ? dataListProduct.map((item, index) => (
+                    <div>
+                      <Link to={`/chi-tiet/${item.slug}`}>
+                        <div className="item-new-product-bottom-1" key={index}>
+                          {item.acf && item.acf !== undefined && item.acf !== null && item.acf.img1 ? <img src={`${item.acf.img1.url}`} /> : 1}
+                          <div className='content-new-products-1'></div>
+                          <div className='title-address-news'>{ReactHtmlParser(item.title.rendered)}</div>
+                        </div></Link>
+                    </div>
+                  )) : (null)}
+                </Slider>
+              </div>
+            </div> */}
           </div>
         </div>
       </div >

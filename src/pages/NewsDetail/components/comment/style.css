@@ -1,7 +1,7 @@
 .wrapper-comment {
-    margin: 0 135px;
+    margin: 0 170px;
     background-color: #f8f8f8;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
 }
 
 .comment {
@@ -46,6 +46,7 @@
     border-bottom: 1.5px solid #d9d9d9;
     padding-bottom: 31px;
     margin-bottom: 40px;
+    width: 100%;
 }
 
 .noidungbinhluan span {

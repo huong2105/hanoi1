@@ -1,7 +1,9 @@
 import "./style.css"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { TiArrowBack } from 'react-icons/ti';
-export const Comment = () => {
+import axios from "axios"
+import moment from "moment";
+export const Comment = ({slug}) => {
 
     const [comment, setComment] = useState([
         {
@@ -38,6 +40,10 @@ export const Comment = () => {
     ])
     const [idReply, setidReply] = useState(null)
     const [idReply1, setidReply1] = useState(null)
+    const [writeComment, setWriteComment] = useState("")
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+
     const reply = (id) => {
 
         setidReply(id)
@@ -54,28 +60,41 @@ export const Comment = () => {
         setidReply1(null)
         setidReply(null)
     }
+
+    const sendComment = async () => {
+
+        const data = {userName : writeComment, email, comment : writeComment ,title: slug}
+        await axios.post("http://localhost:5000/comment", data)
+    }
+
+    useEffect( async () => {
+
+       const res =  await axios.get(`http://localhost:5000/comment/title=${slug}`)
+        setComment(res.data)
+    },[])
+    console.log("comment", comment);
     return (
 
         <div className="wrapper-comment">
             <div className="comment">Bình Luận</div>
-            {comment.map((item, index) => (
+            {comment && comment.length > 0 ?   comment.map((item, index) => (
                 <>
                     <div className='infocommentnews' key={index}>
                         <div className='avtcomment'>
-                            <img src={`${item.avatart}`} alt="" />
+                            <img src={`${item.avatart ?? "/images/1bdfcb747b5a688e2b38ffe5d30a1385.jpg"}`} alt="" />
                         </div>
                         <div className='noidungbinhluan'>
                             <div className='usercomment'>
-                                <p>{item.name}</p>
+                                <p>{item.userName}</p>
                                 <div>|</div>
-                                <div>{item.time}</div>
+                                <div>{moment(item.createdAt).format("DD-MM-YYYY") }</div>
                             </div>
-                            <span>{item.content}</span>
-                            <div className="reply">
-                                {item.id === idReply ? <>
+                            <span>{item.comment}</span>
+                            {/* <div className="reply">
+                                {item._id === idReply ? <>
                                     <form method="POST">
                                         <input type="text" placeholder="Nhập phản hồi của bạn" />
-                                        <button type="submit" onClick={() => gui(item.id)}>Gửi</button>
+                                        <button type="submit" onClick={() => gui(item._id)}>Gửi</button>
                                     </form>
                                 </> : (null)}
 
@@ -87,10 +106,10 @@ export const Comment = () => {
                                         Trả lời
                                     </div>
                                 </>}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
-                    {item.reply.map((item, index) => (
+                    {/* {item.reply.map((item, index) => (
                         <div className='infocommentnews infocommentnewsreply' key={index}>
                             <div className='avtcomment'>
                                 <img src={`${item.avatart}`} alt="" />
@@ -118,29 +137,29 @@ export const Comment = () => {
                                             <div onClick={() => reply1(item.id)}>
                                                 Trả lời
                                             </div></>}
-
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ))} */}
                 </>
-            ))}
+            )): (null)}
+          
 
             <div className="postcomment">
                 <div className="title-comment">Để Lại Bình Luận</div>
                 <div className="successinfo">Thông tin của bạn sẽ được bảo mật. Vui lòng nhập thông tin bắt buộc *</div>
                 <div className="inputcomment">
-                    <input className="writecomment" type="text" placeholder="Nhập bình luận của bạn..." />
+                    <input onChange={(e) => setWriteComment(e.target.value)} className="writecomment" type="text" placeholder="Nhập bình luận của bạn..." />
                     <div className="inputnameemail">
-                        <input className="writeemail" type="text" placeholder="Tên *" />
-                        <input className="writeemail" type="text" placeholder="Email *" />
+                        <input onChange={(e) => setName(e.target.value)} className="writeemail" type="text" placeholder="Tên *" />
+                        <input onChange={(e) => setEmail(e.target.value)} className="writeemail" type="text" placeholder="Email *" />
                     </div>
                     <div className="saveinfo">
                         <input type="checkbox" />
                         <div>Lưu thông tin của bạn cho nhưng lần bình luận tiếp theo !</div>
                     </div>
                     <div className="buttonpostcomment">
-                        <button>
+                        <button onClick={() => sendComment()}>
                             Gửi Bình Luận
                         </button>
                     </div>

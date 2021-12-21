@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import './style.css'
 import { AiOutlineComment } from "react-icons/ai"
-
+import { useParams } from "react-router-dom"
+import { useCookies } from "react-cookie";
 export const ListNewsBlog = ({ title }) => {
-    console.log("đây là trang của ", title);
+    const { slug } = useParams()
     const [listBlogHomestay, setListBlogHomestay] = useState([
         {
             id: 1,

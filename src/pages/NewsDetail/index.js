@@ -8,6 +8,7 @@ import { getNewsDetail } from '../../redux/NewsDetail/action';
 import { Banner } from './components/banner';
 import { Comment } from './components/comment';
 import { AiOutlineComment } from "react-icons/ai"
+import moment from "moment"
 
 function PageNewsDtail() {
 
@@ -30,7 +31,7 @@ function PageNewsDtail() {
                         <div className='NameDetail'>{ReactHtmlParser(data[0].title.rendered)}</div>
                         <div className='thongtinchitietbaiviet'>
                             <div className='nguoidangbai'> Bởi Admin </div>
-                            <div className='ngaydangbai'>01/12/2021</div>
+                            <div className='ngaydangbai'>{moment(data[0].date).format("DD-MM-YYYY")}</div>
                             <div className='luotbinhuan'><AiOutlineComment /> 2 bình luận</div>
 
                         </div>
@@ -42,7 +43,7 @@ function PageNewsDtail() {
                  : (null)}
             </div>
             
-            <Comment />
+            <Comment slug = {slug} />
         </div>
     );
 }

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import ReactHtmlParser from "react-html-parser";
 import "./style.css";
 import { getListProduct } from "../../../../../../redux/ListProduct/action";
-function Right({titleCategory}) {
+function Right({ titleCategory }) {
     const [id, setId] = useState(2);
     const [address, setAddress] = useState([
         {
@@ -56,7 +56,7 @@ function Right({titleCategory}) {
     const dispatch = useDispatch()
     const { dataListProduct } = useSelector(state => state.ListReducer)
     useEffect(() => {
-        
+
         dispatch(getListProduct())
     }, [dispatch])
 
@@ -74,7 +74,7 @@ function Right({titleCategory}) {
 
                     {address.map((item, index) => (
 
-                        <option>
+                        <option key={index}>
                             {item.title}
                         </option>
                     ))}
@@ -82,69 +82,73 @@ function Right({titleCategory}) {
 
             </div>
             <div>
-                {dataListProduct && dataListProduct.length > 0 ? dataListProduct.map((item, index) => 
-                  item.acf.category === titleCategory ?   <>
-                  {(index + 1) % 2 !== 0 ? (
-                      <div className="info-address" key={index}>
-                          <div className="info-left">
-                              <div>{index + 1}</div>
-                          </div>
-                          
-                          {item.acf && item.acf !== undefined && item.acf !== null ? <div className="img-news"><img src={`${item.acf.img1.url}`} /></div> : 0}
+                {dataListProduct && dataListProduct.length > 0 ? dataListProduct.map((item, index) =>
+                    item.acf.category === titleCategory ? <>
+                        {(index + 1) % 2 !== 0 ? (
+                            <div className="info-address" key={index}>
+                                <div className="info-left">
+                                    <div>{index + 1}</div>
+                                </div>
 
-                          <div className='content-address'>
-                              <h2>{ReactHtmlParser(item.title.rendered)}</h2>
-                              <div>
-                                  {ReactHtmlParser(item.content.rendered)}
-                              </div>
-                              <Link to={`/chi-tiet/${item.slug}`}><span>Đọc thêm <AiOutlineArrowRight /></span></Link>
-                          </div>
-                      </div>) : (<div className="info-address  info-address-2" key={index}>
+                                {item.acf && item.acf !== undefined && item.acf !== null ? <div className="img-news"><img src={`${item.acf.img1.url}`} /></div> : 0}
 
-                          <div className="info-left">
-                              <div>{index + 1}</div>
-                          </div>
-                          {item.acf && item.acf !== undefined && item.acf !== null ? <div className="img-news img-new-2"><img src={`${item.acf.img1.url}`} /></div> : 0}
+                                <div className='content-address'>
+                                    <Link to={`/chi-tiet/${item.slug}`}>
+                                        <h2>{ReactHtmlParser(item.title.rendered)}</h2>
+                                    </Link>
+                                    <div>
+                                        {ReactHtmlParser(item.content.rendered)}
+                                    </div>
+                                    <Link to={`/chi-tiet/${item.slug}`}><span>Đọc thêm <AiOutlineArrowRight /></span></Link>
+                                </div>
+                            </div>) : (<div className="info-address  info-address-2" key={index}>
 
-                          <div className='content-address'>
-                              <h2>{ReactHtmlParser(item.title.rendered)}</h2>
-                              <div>
-                                  {ReactHtmlParser(item.content.rendered)}
-                              </div>
-                              <Link to={`/chi-tiet/${item.slug}`}><span>Đọc thêm <AiOutlineArrowRight /></span></Link>
-                          </div>
-                      </div>)}
-              </> : titleCategory === "all" ? (<>
-                  {(index + 1) % 2 !== 0 ? (
-                      <div className="info-address" key={index}>
-                          <div className="info-left">
-                              <div>{index + 1}</div>
-                          </div>
-                          
-                          {item.acf && item.acf !== undefined && item.acf !== null ? <div className="img-news"><img src={`${item.acf.img1.url}`} /></div> : 0}
+                                <div className="info-left">
+                                    <div>{index + 1}</div>
+                                </div>
+                                {item.acf && item.acf !== undefined && item.acf !== null ? <div className="img-news img-new-2"><img src={`${item.acf.img1.url}`} /></div> : 0}
 
-                          <div className='content-address'>
-                              <h2>{ReactHtmlParser(item.title.rendered)}</h2>
-                              <div>
-                                  {ReactHtmlParser(item.content.rendered)}
-                              </div>
-                              <Link to={`/chi-tiet/${item.slug}`}><span>Đọc thêm <AiOutlineArrowRight /></span></Link>
-                          </div>
-                      </div>) : (<div className="info-address  info-address-2" key={index}>
+                                <div className='content-address'>
+                                    <Link to={`/chi-tiet/${item.slug}`}>
+                                        <h2>{ReactHtmlParser(item.title.rendered)}</h2>
+                                    </Link>
+                                    <div>
+                                        {ReactHtmlParser(item.content.rendered)}
+                                    </div>
+                                    <Link to={`/chi-tiet/${item.slug}`}><span>Đọc thêm <AiOutlineArrowRight /></span></Link>
+                                </div>
+                            </div>)}
+                    </> : titleCategory === "all" ? (<>
+                        {(index + 1) % 2 !== 0 ? (
+                            <div className="info-address" key={index}>
+                                <div className="info-left">
+                                    <div>{index + 1}</div>
+                                </div>
 
-                          <div className="info-left">
-                              <div>{index + 1}</div>
-                          </div>
-                          {item.acf && item.acf !== undefined && item.acf !== null ? <div className="img-news img-new-2"><img src={`${item.acf.img1.url}`} /></div> : 0}
-                          <div className='content-address'>
-                              <h2>{ReactHtmlParser(item.title.rendered)}</h2>
-                              <div>
-                                  {ReactHtmlParser(item.content.rendered)}
-                              </div>
-                              <Link to={`/chi-tiet/${item.slug}`}><span>Đọc thêm <AiOutlineArrowRight /></span></Link>
-                          </div>
-                      </div>)}
-              </> ) : (null) 
+                                {item.acf && item.acf !== undefined && item.acf !== null ? <div className="img-news"><img src={`${item.acf.img1.url}`} /></div> : 0}
+
+                                <div className='content-address'>
+                                    <Link to={`/chi-tiet/${item.slug}`}><h2>{ReactHtmlParser(item.title.rendered)}</h2></Link>
+                                    <div>
+                                        {ReactHtmlParser(item.content.rendered)}
+                                    </div>
+                                    <Link to={`/chi-tiet/${item.slug}`}><span>Đọc thêm <AiOutlineArrowRight /></span></Link>
+                                </div>
+                            </div>) : (<div className="info-address  info-address-2" key={index}>
+
+                                <div className="info-left">
+                                    <div>{index + 1}</div>
+                                </div>
+                                {item.acf && item.acf !== undefined && item.acf !== null ? <div className="img-news img-new-2"><img src={`${item.acf.img1.url}`} /></div> : 0}
+                                <div className='content-address'>
+                                    <Link to={`/chi-tiet/${item.slug}`}>  <h2>{ReactHtmlParser(item.title.rendered)}</h2></Link>
+                                    <div>
+                                        {ReactHtmlParser(item.content.rendered)}
+                                    </div>
+                                    <Link to={`/chi-tiet/${item.slug}`}><span>Đọc thêm <AiOutlineArrowRight /></span></Link>
+                                </div>
+                            </div>)}
+                    </>) : (null)
                 ) : (<>
                     <div className="info-address">
                         <div className="info-left">

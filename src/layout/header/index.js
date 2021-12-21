@@ -30,12 +30,16 @@ function Header() {
   const onsubmit = () => {
     setInput(1);
   };
-  const onSetIdHeader = (id) => {
-    // setToken("idheader", id)
+  const onSetIdHeader = (title) => {
+  
   };
   const getCookies = useCookies();
   const removieCookies = () => {
     removeCookie("token");
+    removeCookie("email");
+    removeCookie("status");
+    removeCookie("userName");
+
   };
   return (
     <div className="App1">
@@ -53,9 +57,9 @@ function Header() {
           </a>
         </div>
         {getCookies[0].token ? (
-          <div className="content-right">
+          <div className="content-right" onClick={() => removieCookies()}>
             <BsPersonCircle />
-            <div className="account-user" onClick={() => removieCookies()}>
+            <div className="account-user">
               {getCookies[0].userName}
             </div>
             <div className="itemmannager">
@@ -82,7 +86,7 @@ function Header() {
         {header.map((item, index) => (
           <>
             <a href={`${item.link}`} key={index}>
-              <span onClick={() => onSetIdHeader(item.id)}>{item.title}</span>
+              <span onClick={() => onSetIdHeader(item.title)}>{item.title}</span>
             </a>
           </>
         ))}

@@ -3,10 +3,11 @@ import React from "react";
 import { useState } from "react";
 import { useCookies } from "react-cookie";
 import "./style.css";
+import { BsArrowLeft } from "react-icons/bs"
 
 function PageSingup() {
   const getCookies = useCookies();
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState(getCookies && getCookies[0].userName ? getCookies[0].userName : "");
   const [email, setEmail] = useState(
     getCookies && getCookies[0].email ? getCookies[0].email : ""
   );
@@ -42,13 +43,14 @@ function PageSingup() {
           <div className="item-left">
             <h2>Gửi phản hồi</h2>
             <div className="wrapper-input">
-              <input
+              {getCookies && getCookies[0].email ? null : <input
                 type="text"
                 value={userName}
                 className="name"
                 placeholder="Họ và tên *"
                 onChange={(e) => setUserName(e.target.value)}
-              />
+              />}
+
               {getCookies && getCookies[0].email ? null : (
                 <input
                   type="text"
@@ -79,13 +81,7 @@ function PageSingup() {
                 placeholder="Chức vụ/nghề nghiệp *"
                 onChange={(e) => setPosition(e.target.value)}
               />
-              <input
-                type="text"
-                value={content}
-                className="name messenger"
-                placeholder="Nội dung phản hồi... *"
-                onChange={(e) => setContent(e.target.value)}
-              />
+
               <button type="submit" onClick={() => postFeedback()}>
                 Gửi
               </button>
@@ -93,7 +89,14 @@ function PageSingup() {
           </div>
         </div>
         <div className="right">
-          <img src="/images/pexels-tirachard-kumtanom-347141.jpg" alt="" />
+          <input
+            type="text"
+            value={content}
+            className="name messenger"
+            placeholder="Nội dung phản hồi... *"
+            onChange={(e) => setContent(e.target.value)}
+          />
+          <a href="/"> <div> <BsArrowLeft /> Quay lại trang chủ </div></a>
         </div>
       </div>
     </div>

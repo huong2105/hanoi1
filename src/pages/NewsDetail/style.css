@@ -48,12 +48,13 @@ background: crimson;
 
     position: relative;
     background-color: #f8f8f8;
-    margin-bottom: 110px;
+    margin-bottom: 25px;
 }
 
 .noidung{
-    margin : 0 135px;
+    margin : 0 170px;
     background-color: #ffffff;
+    border-bottom: 1px solid #e5e5ee;
 
 }
 
@@ -72,6 +73,7 @@ background: crimson;
 .wrappernoidungchitietbaiviet{
 
     margin: 0 70px;
+    
 }
 .thongtinchitietbaiviet {
     display: flex;
