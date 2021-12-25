@@ -122,23 +122,23 @@ export const ListNewsBlog = ({ title }) => {
             comment: 3,
             summary: "Những quán Cafe học nhóm Hà Nội là không gian lí tưởng để các bạn cùng nhau học tập và trao đổi kiến thức.",
         },
-        {
-            id: 2,
-            img: "/images/anh.jpg",
-            title: "Quán Cafe cho thuê tổ chức sự kiện ở   Hà Nội có không gian đẹp ",
-            day: "01/12/2021",
-            comment: 10,
-            summary: "Với mức chi phí không quá cao, các quán Cafe là địa điểm lí tưởng tổ chức các buổi thảo luận, workshop, offline hội nhóm,..",
-        },
+        // {
+        //     id: 2,
+        //     img: "/images/anh.jpg",
+        //     title: "Quán Cafe cho thuê tổ chức sự kiện ở   Hà Nội có không gian đẹp ",
+        //     day: "01/12/2021",
+        //     comment: 10,
+        //     summary: "Với mức chi phí không quá cao, các quán Cafe là địa điểm lí tưởng tổ chức các buổi thảo luận, workshop, offline hội nhóm,..",
+        // },
 
-        {
-            id: 3,
-            img: "/images/131987579_219603059631462_6040954554526691297_n.jpg",
-            title: "Top 10 quán cafe thú cưng ở Hà Nội với những thú cưng so-cute",
-            day: "01/12/2021",
-            comment: 20,
-            summary: "Ngày nay có rất nhiều người yêu thích thú cưng nên các tiệm coffee thú cưng được quân tâm, đánh giá và săn lùng khá nhiều. ",
-        },
+        // {
+        //     id: 3,
+        //     img: "/images/131987579_219603059631462_6040954554526691297_n.jpg",
+        //     title: "Top 10 quán cafe thú cưng ở Hà Nội với những thú cưng so-cute",
+        //     day: "01/12/2021",
+        //     comment: 20,
+        //     summary: "Ngày nay có rất nhiều người yêu thích thú cưng nên các tiệm coffee thú cưng được quân tâm, đánh giá và săn lùng khá nhiều. ",
+        // },
 
         {
             id: 4,
@@ -191,14 +191,14 @@ export const ListNewsBlog = ({ title }) => {
             comment: 2,
             summary: "Top 10 quán Cafe sách Hà Nội sau đây đều là những quán được đánh giá cao nhờ nguồn sách độc, phong phú nhất.",
         },
-        {
-            id: 10,
-            img: "/images/29598333_1848010665229456_121848117587716462_n.jpg",
-            title: "TOP 7 quán cafe mở 24/24 ở Hà Nội cho team ‘cú đêm’",
-            day: "01/12/2021",
-            comment: 2,
-            summary: "Nếu bạn đang cần tìm một nơi để tâm sự cùng bạn bè mỗi đêm muộn, hãy cùng tham khảo những quán cafe mở qua đêm ở Hà Nội nhé.",
-        },
+        // {
+        //     id: 10,
+        //     img: "/images/29598333_1848010665229456_121848117587716462_n.jpg",
+        //     title: "TOP 7 quán cafe mở 24/24 ở Hà Nội cho team ‘cú đêm’",
+        //     day: "01/12/2021",
+        //     comment: 2,
+        //     summary: "Nếu bạn đang cần tìm một nơi để tâm sự cùng bạn bè mỗi đêm muộn, hãy cùng tham khảo những quán cafe mở qua đêm ở Hà Nội nhé.",
+        // },
         {
             id: 11,
             img: "/images/bancong.jpg",
