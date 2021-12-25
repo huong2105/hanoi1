@@ -84,7 +84,7 @@ function Left() {
         <>
             <div className='product-left'>
                 <div className='categori'>
-                    <h4>Chọc lọc theo: </h4>
+                    <h4>Chọc lọc theo </h4>
                     <div>
                         <div    style={{ color: titleCategory === "all" ? "#2AA0F5" : "" }} className='title' onClick={() => onsetTitleCategory("all")}>Tất cả</div>
                         {listdata?.map((item, index) => (

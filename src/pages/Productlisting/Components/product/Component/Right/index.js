@@ -177,7 +177,7 @@ function Right({ titleCategory }) {
                                 Cộng Cà Phê được truyền cảm hứng ấy, thiết kế, trang trí và mang văn hóa bao cấp. Chữ Cộng khiến chúng ta liên tưởng tới "Cộng sản" - là hình thức của nhà nước Việt Nam lúc bấy giờ. Phong cách lạ lẫm, thú vị, hồi niệm của Cộng Cà Phê hóa ra lại thu hút giới trẻ.
                                 Giới trẻ đến Cộng Cà Phê không chỉ để uống cafe mà còn để trải nghiệm không gian mang đậm màu xanh của lính, với chăn con công, phích nước Rạng Đông, chạn gỗ, Tivi hộp, cửa sổ song sắt... Đây là những thứ từng quen thuộc với chúng ta khi còn nhỏ nhưng giờ không còn nữa, khiến cho giới trẻ trở nên hoài niệm. Hiện nay, Cộng Cà Phê không chỉ có 14 địa điểm trên khắp Hà Nội mà còn có nhiều chi nhánh nhượng quyền (franchise) trên khắp cả nước, với số lượng khách là giới trẻ luôn rất đông và tấp nập.
                             </div>
-                            <span>Đọc thêm <AiOutlineArrowRight /></span>
+                            <span><AiOutlineArrowRight /></span>
                         </div>
                     </div></>)}
 
