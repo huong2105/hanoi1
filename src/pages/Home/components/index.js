@@ -231,7 +231,7 @@ function Home() {
                   : null}
               </Slider>
             </div>
-            <a href="/danh-sach-dia-diem">
+            <a href="/danh-sach-dia-diem/ca-phe">
               {" "}
               <div className="xtchomepage">
                 {" "}

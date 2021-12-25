@@ -10,7 +10,7 @@ function* getListProduct({ payload }) {
   } else {
     var params = `posts`;
   }
-
+  console.log("params", params);
   try {
     const res = yield axios.get(
       `https://api-review.000webhostapp.com/wp-json/wp/v2/${params}?page=${payload.page}&per_page=${payload.perPage}`
