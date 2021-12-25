@@ -13,9 +13,9 @@ import moment from "moment"
 function PageNewsDtail() {
 
     const { slug } = useParams();
-    console.log("sluggg", slug);
+    
     const { data } = useSelector(state => state.newsDetailReducer)
-    console.log("dataaaâ", data);
+    
     const disptach = useDispatch()
     useEffect(() => {
         disptach(getNewsDetail(slug))

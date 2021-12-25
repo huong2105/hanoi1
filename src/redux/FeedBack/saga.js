@@ -2,6 +2,7 @@ import * as types from "./type";
 import * as actions from "./action";
 import axios from "axios";
 import { put, takeLatest } from "@redux-saga/core/effects";
+import { API_URL } from "../../utils";
 
 function* getFeedBack({payload}) {
   if(payload.email && payload.status === "admin"){
@@ -12,8 +13,8 @@ function* getFeedBack({payload}) {
     var params = `email=${payload.email}`
   }
   try {
-    const res = yield axios.get(`http://localhost:5000/feedback/${params}`);
-    console.log("ress", res);
+    const res = yield axios.get(`${API_URL}/feedback/${params}`);
+    
     if (res) {
       yield put(actions.getFeedBackSuccess(res.data));
     }

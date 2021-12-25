@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./style.css";
 import { useCookies } from "react-cookie";
 import { useHistory } from "react-router-dom";
+import { API_URL } from "../../../../utils";
 
 const Infologin = () => {
   const [email, setEmail] = useState();
@@ -14,10 +15,8 @@ const Infologin = () => {
   const onSubmitLogin = async () => {
     try {
       const data = { email, passwork, status };
-      const res = await axios.post(`http://localhost:5000/login`, data);
-      const getRest = await axios.get(`http://localhost:5000/account/category=${email}`);
-      console.log("getRest", getRest);
-      console.log(res);
+      const res = await axios.post(`${API_URL}/login`, data);
+      const getRest = await axios.get(`${API_URL}/account/category=${email}`);
       if (res.data.token) {
         const tokenData = res.data.token;
         const email = res.data.email;

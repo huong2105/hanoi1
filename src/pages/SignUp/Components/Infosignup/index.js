@@ -1,7 +1,7 @@
 import axios from "axios";
-import { Button } from "bootstrap";
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { API_URL } from "../../../../utils";
 import "./style.css";
 
 const Infosignup = () => {
@@ -24,8 +24,8 @@ const Infosignup = () => {
       setError("Vui lòng nhập đầy đủ thông tin!");
     } else {
       const data = { userName, email, passwork, confirmPasswork };
-      const res = await axios.post("http://localhost:5000/account", data);
-      console.log(res);
+      const res = await axios.post(`${API_URL}/account`, data);
+      
       if (res.status === 250) {
         setError("Tài khoản đã tồn tại!!");
       } else if (res.status === 200) {

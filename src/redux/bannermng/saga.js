@@ -2,10 +2,11 @@ import * as types from "./type";
 import * as actions from "./action";
 import axios from "axios";
 import { put, takeLatest } from "@redux-saga/core/effects";
+import { API_URL } from "../../utils";
 
 function* laydulieuBanner() {
   try {
-    const res = yield axios.get("http://localhost:5000/banner");
+    const res = yield axios.get(`${API_URL}/banner"`);
     if (res) {
       yield put(actions.layBannerThanhCong(res.data));
     }
@@ -15,7 +16,7 @@ function* laydulieuBanner() {
 }
 function* postBanner({ payload }) {
   try {
-    const res = yield axios.post("http://localhost:5000/banner", payload);
+    const res = yield axios.post(`${API_URL}/banner`, payload);
     if (res) {
       yield put(actions.postbannerthanhcong(res.data));
     }
@@ -27,7 +28,7 @@ function* postBanner({ payload }) {
 function* deleteBanner({ payload }) {
   try {
     const res = yield axios.delete(
-      `http://localhost:5000/banner/${payload._id}`
+      `${API_URL}/banner/${payload._id}`
     );
     if (res) {
       yield put(actions.deletebannerthanhcong(payload._id));

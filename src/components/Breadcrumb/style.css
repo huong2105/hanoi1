@@ -1,4 +1,4 @@
-.breadcrumb{
+/* .breadcrumb{
     display: flex;
     gap : 5px;
     padding: 0 135px;
@@ -7,6 +7,6 @@
 .breadcrumb div{
 
     font-size: 14px;
-    font-weight: 400;
-    color: #999999;
-}
+    font-weight: 500;
+    color:red;
+} */

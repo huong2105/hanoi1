@@ -2,6 +2,7 @@ import * as types from "./type"
 import * as actions from "./action"
 import axios from "axios"
 import { put, takeLatest } from "@redux-saga/core/effects";
+import { API_URL } from "../../utils";
 function* wpGetListProduct({ payload }) {
     // console.log(payload);
     // try {
@@ -16,9 +17,9 @@ function* wpGetListProduct({ payload }) {
 }
 
 function* getListProduct({ payload }) {
-  
+    
     try {
-        const res = yield axios.get(`http://api-review.000webhostapp.com/wp-json/wp/v2/posts`)
+        const res = yield axios.get(`https://api-review.000webhostapp.com/wp-json/wp/v2/posts?page=${payload.page}&per_page=${payload.perPage}`)
         if (res) {
             yield put(actions.getListProductSuccess(res.data))
         }
@@ -30,7 +31,7 @@ function* getListProduct({ payload }) {
 function* getfilterProduct({ payload }) { // {payload} => payload : payload
 
     try {
-        const res = yield axios.get(`http://localhost:5000/listproducts/${payload}`)
+        const res = yield axios.get(`${API_URL}/listproducts/${payload}`)
         if (res) {
             yield put(actions.filterListProductSuccess(res.data))
         }

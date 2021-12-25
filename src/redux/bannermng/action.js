@@ -15,10 +15,10 @@ export const layBannerThatBai = (data) => ({
 // 
 export const postbanner = (data) => (
     {
-    type: types.POST_BANNER,
-    payload: data
+        type: types.POST_BANNER,
+        payload: data
 
-})
+    })
 export const postbannerthanhcong = (data) => ({
     type: types.POST_BANNER_SUCCESS,
     payload: data
@@ -30,16 +30,16 @@ export const postbannerthatbai = (data) => ({
 
 // 
 export const deletebanner = (data) => (
-    
-    console.log("data trong action", data), {
-    type:types.DELETE_BANNER,
-    payload: data 
-})
+
+    {
+        type: types.DELETE_BANNER,
+        payload: data
+    })
 export const deletebannerthanhcong = (data) => ({
-    type:types.DELETE_BANNER_SUCCESS,
-    payload: data 
+    type: types.DELETE_BANNER_SUCCESS,
+    payload: data
 })
 export const deletebannerthatbai = (data) => ({
-    type:types.DELETE_BANNER_FAIL,
-    payload: data 
+    type: types.DELETE_BANNER_FAIL,
+    payload: data
 })

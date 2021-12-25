@@ -1,8 +1,8 @@
 import "./style.css"
 import React, { useEffect, useState } from "react"
-import { TiArrowBack } from 'react-icons/ti';
 import axios from "axios"
 import moment from "moment";
+import { API_URL } from "../../../../utils";
 export const Comment = ({slug}) => {
 
     const [comment, setComment] = useState([
@@ -64,15 +64,15 @@ export const Comment = ({slug}) => {
     const sendComment = async () => {
 
         const data = {userName : writeComment, email, comment : writeComment ,title: slug}
-        await axios.post("http://localhost:5000/comment", data)
+        await axios.post(`${API_URL}/comment`, data)
     }
 
     useEffect( async () => {
 
-       const res =  await axios.get(`http://localhost:5000/comment/title=${slug}`)
+       const res =  await axios.get(`${API_URL}/comment/title=${slug}`)
         setComment(res.data)
     },[])
-    console.log("comment", comment);
+
     return (
 
         <div className="wrapper-comment">

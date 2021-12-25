@@ -77,6 +77,7 @@ function Header() {
         )}
       </div>
       <div className="infoheader">
+
         <div>
           <img
             src="/images/6510627715_bf1acfa0-6a57-427b-867d-856bcff3cd68.png"

@@ -7,6 +7,8 @@ import "./style.css";
 import { getListProduct } from "../../../../../../redux/ListProduct/action";
 function Right({ titleCategory }) {
     const [id, setId] = useState(2);
+    const [page, setPage] = useState(1)
+    const [perPage, setPerPage] = useState(100)
     const [address, setAddress] = useState([
         {
             id: 4,
@@ -57,7 +59,10 @@ function Right({ titleCategory }) {
     const { dataListProduct } = useSelector(state => state.ListReducer)
     useEffect(() => {
 
-        dispatch(getListProduct())
+        dispatch(getListProduct({
+            page,
+            perPage
+        }))
     }, [dispatch])
 
     const onsubmit = (id) => {
@@ -68,10 +73,8 @@ function Right({ titleCategory }) {
     return (
         <div className="wraper-right">
             <div className="wraper-address">
-                Chăm chỉ học tập tại top những quán cafe ở Hà Nội yên tĩnh
-
+                <h3>QUÁN CAFE YÊU THÍCH CỦA MÌNH Ở HÀ NỘI</h3>
                 <select>
-
                     {address.map((item, index) => (
 
                         <option key={index}>
@@ -79,7 +82,6 @@ function Right({ titleCategory }) {
                         </option>
                     ))}
                 </select>
-
             </div>
             <div>
                 {dataListProduct && dataListProduct.length > 0 ? dataListProduct.map((item, index) =>
@@ -94,7 +96,7 @@ function Right({ titleCategory }) {
 
                                 <div className='content-address'>
                                     <Link to={`/chi-tiet/${item.slug}`}>
-                                        <h2>{ReactHtmlParser(item.title.rendered)}</h2>
+                                        <h4>{ReactHtmlParser(item.title.rendered)}</h4>
                                     </Link>
                                     <div>
                                         {ReactHtmlParser(item.content.rendered)}
@@ -110,7 +112,7 @@ function Right({ titleCategory }) {
 
                                 <div className='content-address'>
                                     <Link to={`/chi-tiet/${item.slug}`}>
-                                        <h2>{ReactHtmlParser(item.title.rendered)}</h2>
+                                        <h4>{ReactHtmlParser(item.title.rendered)}</h4>
                                     </Link>
                                     <div>
                                         {ReactHtmlParser(item.content.rendered)}

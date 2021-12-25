@@ -13,7 +13,6 @@ function ManaComponent() {
     const [img, setImg] = useState("")
     const { data } = useSelector(state => state.dulieubanner)
     const dispatch = useDispatch()
-    console.log("Data", data);
     useEffect(() => {
 
         dispatch(laybanner())

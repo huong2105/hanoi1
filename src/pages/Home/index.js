@@ -5,7 +5,11 @@ import './style.css';
 
 function Homepage() {
     return (
+        <>
+        {/* <title>Trang Chủ</title> */}
         <Home />
+        </>
+        
     );
 }
 

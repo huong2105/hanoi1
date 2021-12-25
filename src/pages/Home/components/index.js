@@ -19,9 +19,10 @@ function Home() {
 
   const [id, setId] = useState("615db69b5c661f01f4db4000")
   const { dataListProduct, datafilterListProduct, wpdata } = useSelector(state => state.ListReducer)
+  console.log("dataListProduct", dataListProduct);
   const { data } = useSelector(state => state.dulieubanner)
   const { dataHomestay } = useSelector(state => state.homestayReducer)
-  console.log("homestayReducer", dataHomestay);
+  
   const settings = {
     arrows: true,
     dots: true,
@@ -31,14 +32,19 @@ function Home() {
     slidesToShow: 3,
     slidesToScroll: 2,
   };
-  console.log("dataListProduct", dataListProduct);
+  
   const dispatch = useDispatch()
   useEffect(() => {
 
     dispatch(laybanner())
   }, [dispatch]);
   useEffect(() => {
-    dispatch(getListProduct())
+    dispatch(getListProduct(
+      {
+        page : 1,
+        perPage: 100
+      }
+    ))
     dispatch(filterListProduct(id))
     dispatch(wpGetListProduct())
     dispatch(getHomestay())

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useCookies } from "react-cookie";
 import "./style.css";
 import { BsArrowLeft } from "react-icons/bs"
+import { API_URL } from "../../utils";
 
 function PageSingup() {
   const getCookies = useCookies();
@@ -27,7 +28,7 @@ function PageSingup() {
       alert("Vui lòng nhập đẩy đầy đủ thông tin !!!");
     } else {
       var data = { userName, email, phone, company, position, content };
-      await axios.post(`http://localhost:5000/feedback`, data);
+      await axios.post(`${API_URL}/feedback`, data);
       setUserName("");
       setEmail("");
       setPhone("");

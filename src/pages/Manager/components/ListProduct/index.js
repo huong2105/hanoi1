@@ -4,7 +4,6 @@ import { getListProduct } from '../../../../redux/ListProduct/action'
 export const PageListproducts = () => {
 
     const {dataListProduct} = useSelector(state => state.ListReducer)
-    console.log("ListProduct",dataListProduct );
 
     const dispatch = useDispatch()
     useEffect(() => {

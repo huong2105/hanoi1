@@ -7,7 +7,7 @@ import "./style.css";
 const Feedback = () => {
   const { dataFeedback } = useSelector((state) => state.FeedbackReducer);
   const getCookies = useCookies();
-  console.log("dataFeedback", dataFeedback);
+  
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(
