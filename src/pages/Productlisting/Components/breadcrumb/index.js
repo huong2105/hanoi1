@@ -1,13 +1,13 @@
 import React from 'react';
 import "./style.css"
-function Breadcrumb() {
+function Breadcrumb({ad}) {
 
     
     return (
      <div className = 'breadcrumb breadcrumbProductsListing' style={{padding: "0 100px"}}>
          <div>Trang chủ</div>
          <div>|</div>
-         <div>Cà phê</div>
+         <div>{ad === "homestay" ? "Homestay" : "Cà phê"}</div>
          <div>|</div>
          <div>Tất cả</div>
      </div>

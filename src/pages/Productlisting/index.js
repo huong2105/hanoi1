@@ -2,18 +2,19 @@ import React from 'react';
 import Breadcrumb from "./Components/breadcrumb"
 import Left from './Components/product/Component/Left';
 import "./style.css"
+import {useParams } from "react-router-dom";
 function PageProducListing() {
 
-
+    const {ad} = useParams()
     return (
         <>
             <div class="BannerBlog">
-                <img src="/images/CAFE.png" />
+               {ad === "homestay" ? (<img src="/images/HOMESTAY.png" />) :(<img src="/images/CAFE.png" />)}  
             </div>
             <div className="productlisting">
-                <Breadcrumb />
+                <Breadcrumb  ad = {ad}/>
                 <div className="Wapper-product">
-                    <Left />
+                    <Left ad = {ad}/>
                 </div>
             </div>
         </>

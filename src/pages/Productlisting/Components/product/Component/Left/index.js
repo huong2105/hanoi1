@@ -3,9 +3,10 @@ import "./style.css"
 import axios from "axios"
 import Right from '../Right';
 import ReactHtmlParser from "react-html-parser";
-function Left() {
+function Left({ad}) {
     const [listdata, setlistdata] = useState([])
     const [titleCategory, setTitleCategory] = useState("all")
+    console.log("titleCategory", titleCategory);
     const [Catengories, setCategories] = useState([
         {
             id: 0,
@@ -70,8 +71,16 @@ function Left() {
 
     useEffect(async () => {
 
-        const res = await axios.get(`https://api-review.000webhostapp.com/wp-json/wp/v2/category`);
-        setlistdata(res.data)
+        if(ad === "homestay"){
+
+            const res = await axios.get(`https://api-review.000webhostapp.com/wp-json/wp/v2/categoryhomestay`);
+            setlistdata(res.data)
+        }else{
+            const res = await axios.get(`https://api-review.000webhostapp.com/wp-json/wp/v2/category`);
+            setlistdata(res.data)
+        }
+      
+        
 
     }, [])
 
@@ -98,7 +107,7 @@ function Left() {
                     </div>
                 </div>
             </div>
-            <Right titleCategory={titleCategory} />
+            <Right titleCategory={titleCategory} ad = {ad}/>
         </>
     );
 }

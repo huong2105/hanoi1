@@ -6,6 +6,7 @@ import { useState } from "react";
 import { AiOutlinePhone } from "react-icons/ai";
 import { GrCircleQuestion } from "react-icons/gr";
 import { useCookies } from "react-cookie";
+import { Button, Modal } from "react-bootstrap";
 function Header() {
   const [input, setInput] = useState(0);
   const [idHeader, setIdHeader] = useState(1);
@@ -31,7 +32,7 @@ function Header() {
     setInput(1);
   };
   const onSetIdHeader = (title) => {
-  
+    
   };
   const getCookies = useCookies();
   const removieCookies = () => {
@@ -41,6 +42,10 @@ function Header() {
     removeCookie("userName");
 
   };
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div className="App1">
       <div className="header-top">
@@ -101,12 +106,26 @@ function Header() {
           <a href="/dang-ky">
             <BsPersonPlus title="Đăng ký" />
           </a>
-          <BiPlusCircle title="Đăng Bài" />
+          <BiPlusCircle title="Đăng Bài" variant="primary" onClick={handleShow} />
           <a href="/phan-hoi">
             <GrCircleQuestion tile="Phản hồi" />
           </a>
         </div>
       </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

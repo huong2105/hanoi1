@@ -27,8 +27,8 @@ function App() {
           <Route path = '/blog/:slug' component = {PageBlog} />
           <Route path = '/dang-nhap' component = {PageLogIn}/>
           <Route path = '/dang-ky' component ={Pagesignup}></Route>
-          <Route path = "/danh-sach-dia-diem" component = {PageProducListing}></Route>
-          <Route path = "/chi-tiet/:slug" component = {PageNewsDtail}></Route>
+          <Route path = "/danh-sach-dia-diem/:ad" component = {PageProducListing}></Route>
+          <Route path = "/chi-tiet/:ad/:slug" component = {PageNewsDtail}></Route>
           <Route path = "/phan-hoi" component = {PageSingup}></Route>
           <Route path="/quan-ly-he-thong"  render={() => {
               return getCookies[0].token ? (
