@@ -12,14 +12,14 @@ export const PageBlog = () => {
         <>
             {slug === "ca-phe" ? (
                 <div className='pageblog'>
-                    <BannerBlog title = "Cà phê" />
+                    <BannerBlog title = "ca-phe" />
                     <BreadcrumbComponent title="Cà phê" />
-                    <ListNewsBlog title="Cà phê" />
+                    <ListNewsBlog title="ca-phe" />
                 </div>
             ) : (<div className='pageblog'>
-                <BannerBlog title = "Homestay" />
+                <BannerBlog title = "homestay" />
                 <BreadcrumbComponent title="Homestay" />
-                <ListNewsBlog title="Homestay" />
+                <ListNewsBlog title="homestay" />
             </div>)}
         </>
 

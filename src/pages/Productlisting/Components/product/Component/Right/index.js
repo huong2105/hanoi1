@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import ReactHtmlParser from "react-html-parser";
 import "./style.css";
 import { getListProduct } from "../../../../../../redux/ListProduct/action";
 import moment from "moment";
 function Right({ titleCategory }) {
+  const { ad } = useParams();
   const [id, setId] = useState(2);
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(100);
@@ -61,6 +62,7 @@ function Right({ titleCategory }) {
   useEffect(() => {
     dispatch(
       getListProduct({
+        ad,
         page,
         perPage,
       })
@@ -116,16 +118,17 @@ function Right({ titleCategory }) {
             ) : titleCategory === "all" ? (
               <>
                 <div className="info-address" key={index}>
-                  <div className="info-left" title={`${moment(item.date).format("DD-MM-YYYY")}`}>
-                    <div>{moment(item.date).format("DD-MM")} 
-                    
-                    </div>
+                  <div
+                    className="info-left"
+                    title={`${moment(item.date).format("DD-MM-YYYY")}`}
+                  >
+                    <div>{moment(item.date).format("DD-MM")}</div>
                     {/* <div>{moment(item.date).format("MM")}</div> */}
                   </div>
 
                   {item.acf && item.acf !== undefined && item.acf !== null ? (
                     <div className="img-news">
-                      <img src={`${item.acf.img1.url}`} alt = "" />
+                      <img src={`${item.acf.img1.url}`} alt="" />
                     </div>
                   ) : (
                     0
@@ -153,7 +156,7 @@ function Right({ titleCategory }) {
                 <div>1</div>
               </div>
               <div className="img-news">
-                <img src="/images/pexels-rachel-claire-4825701.jpg" alt = "" />
+                <img src="/images/pexels-rachel-claire-4825701.jpg" alt="" />
               </div>
               <div className="content-address">
                 <h2>Cộng Cà Phê </h2>
@@ -189,7 +192,10 @@ function Right({ titleCategory }) {
                 <div>2</div>
               </div>
               <div className="img-news img-new-2">
-                <img src="/images/cup-of-tea-cafe-amp-bistro-224289.jpg" alt = "" />
+                <img
+                  src="/images/cup-of-tea-cafe-amp-bistro-224289.jpg"
+                  alt=""
+                />
               </div>
               <div className="content-address">
                 <h2> Cup Of Tea Cafe {"&"} Bistro </h2>

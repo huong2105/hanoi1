@@ -219,15 +219,15 @@ export const ListNewsBlog = ({ title }) => {
     return (
 
         <div className='wrapperBlog'>
-            {title === "Cà phê" ? listBlog.map((item, index) => (
+            {title === "ca-phe" ? listBlog.map((item, index) => (
 
                 <div className={index === 1 || index === 4 || index === 7 || index === 10 ? `contentblog itemblog` : `contentblog`}>
-                    <a href="/danh-sach-dia-diem">
+                    <a href={`/danh-sach-dia-diem/${title}`}>
                         <div className='wrapperimg'>
                             <img src={`${item.img}`} className='imgblog' />
                         </div>
                     </a>
-                    <a href="/danh-sach-dia-diem">
+                    <a href={`/danh-sach-dia-diem/${title}`}>
                         <div className="wrapper-content-blog">
                             <div className='titleBlog' title={item.title}>{item.title}</div>
                             <div className='comment'>
@@ -241,12 +241,12 @@ export const ListNewsBlog = ({ title }) => {
             )) : listBlogHomestay.map((item, index) => (
 
                 <div className={index === 1 || index === 4 || index === 7 || index === 10 ? `contentblog itemblog` : `contentblog`}>
-                    <a href="/danh-sach-dia-diem">
+                    <a href={`/danh-sach-dia-diem/${title}`}>
                         <div className='wrapperimg'>
                             <img src={`${item.img}`} className='imgblog' />
                         </div>
                     </a>
-                    <a href="/danh-sach-dia-diem">
+                    <a href={`/danh-sach-dia-diem/${title}`}>
                         <div className="wrapper-content-blog">
                             <div className='titleBlog' title={item.title}>{item.title}</div>
                             <div className='comment'>
